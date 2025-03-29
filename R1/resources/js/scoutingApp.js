@@ -811,12 +811,12 @@ function getData(dataFormat) {
       var uncheckedChar = 'N';
   }
 
-  // collect the names of all the elements in the form
-  var fieldnames = Array.from(Form.elements, formElmt => formElmt.name);
-
-  // make sure to add the name attribute only to elements from which you want to collect values.  Radio button groups all share the same name
-  // so those element names need to be de-duplicated here as well.
-  fieldnames.forEach((fieldname) => { if (fieldname != "" && !UniqueFieldNames.includes(fieldname)) { UniqueFieldNames.push(fieldname) } });
+  // Get unique field names from form
+  for (var i = 0; i < Form.elements.length; i++) {
+    if (Form.elements[i].name && !UniqueFieldNames.includes(Form.elements[i].name)) {
+      UniqueFieldNames.push(Form.elements[i].name);
+    }
+  }
 
   UniqueFieldNames.forEach((fieldname) => {
     var thisField = Form[fieldname];
@@ -824,7 +824,13 @@ function getData(dataFormat) {
     if (thisField.type == 'checkbox') {
       var thisFieldValue = thisField.checked ? checkedChar : uncheckedChar;
     } else {
-      var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g, "-") : " ";
+      // Handle empty string values for radio buttons
+      if (thisField.type == 'radio') {
+        var selectedRadio = Form.querySelector(`input[name="${fieldname}"]:checked`);
+        var thisFieldValue = selectedRadio ? (selectedRadio.value || " ") : " ";
+      } else {
+        var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g, "-") : " ";
+      }
     }
     fd.append(fieldname, thisFieldValue)
   })
@@ -1566,3 +1572,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
