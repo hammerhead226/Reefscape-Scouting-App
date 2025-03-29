@@ -147,25 +147,16 @@ var config_data = `
         "type": "counter"
       },
       {
-        "name": "Algae in Net",
+        "name": "Algae in Net by Robot only",
         "code": "tan",
         "type": "counter"
       },
       {
-        "name": "Defense was played on robot",
+        "name": "Defense by opponent was played on this robot",
         "code": "dpr",
-        "type": "bool"
-      },
-      {
-        "name": "Ground Pickup",
-        "code": "gpu",
-        "type": "radio",
-        "choices": {
-          "n": "None",
-          "s": "Slow",
-          "f": "Fast"
-        },
-        "defaultValue": "n"
+        "type": "bool",
+        "defaultValue": "0",
+        "required": "true"
       }
     ],
   
@@ -175,24 +166,14 @@ var config_data = `
         "code": "clm",
         "type": "radio",
         "choices": {
-          "n": "Not Attempted<br>",
-          "p": "Parked (Failed Climb)<br>",
-          "s": "Successful - Shallow<br>",
-          "d": "Successful - Deep"
+          "0": "None<br>",
+          "2": "Parked (no climb attempt)<br>",
+          "2.1": "Parked (Failed Climb)<br>",
+          "6": "Shallow Climb<br>",
+          "12": "Deep Climb"
         },
-        "defaultValue": "n"
-      },
-      {
-        "name": "Why No Climb?",
-        "code": "ncr",
-        "type": "radio",
-        "choices": {
-          "x": "N/A (Did Climb)<br>",
-          "s": "Strategic Choice<br>",
-          "b": "Robot Issues<br>",
-          "t": "Out of Time"
-        },
-        "defaultValue": "x"
+        "defaultValue": "0",
+        "required": "true"
       }
     ],
   
@@ -236,23 +217,9 @@ var config_data = `
         "required": "true"
       },
       {
-        "name": "Defense was played on this robot by opponent",
+        "name": "Defense by opponent was played on this robot",
         "code": "dpor",
         "type": "bool",
-        "defaultValue": "0",
-        "required": "true"
-      },
-      {
-        "name": "Climb Status",
-        "code": "cs",
-        "type": "radio",
-        "choices": {
-          "0": "None<br>",
-          "2": "Parked (no climb attempt)<br>",
-          "2.1": "Parked (Failed Climb)<br>",
-          "6": "Shallow Climb<br>",
-          "12": "Deep Climb"
-        },
         "defaultValue": "0",
         "required": "true"
       },
@@ -268,7 +235,8 @@ var config_data = `
         "code": "co",
         "type": "text",
         "size": 15,
-        "maxSize": 55
+        "maxSize": 55,
+        "required": "false"
       }
     ]
   }`;
