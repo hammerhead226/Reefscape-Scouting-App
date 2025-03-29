@@ -188,7 +188,7 @@ var config_data = `
           "2": "Average<br>",
           "4": "Excellent<br>"
         },
-        "defaultValue": "",
+        "defaultValue": " ",
         "required": "true"
       },
       {
@@ -201,7 +201,7 @@ var config_data = `
           "2": "Average<br>",
           "4": "Excellent<br>"
         },
-        "defaultValue": "",
+        "defaultValue": " ",
         "required": "true"
       },
       {
@@ -213,7 +213,7 @@ var config_data = `
           "0.5": "Partially<br>",
           "1": "Entire Match<br>"
         },
-        "defaultValue": "",
+        "defaultValue": " ",
         "required": "true"
       },
       {
@@ -241,5 +241,7 @@ var config_data = `
     ]
   }`;
   
+
+
 
 
