@@ -170,7 +170,7 @@ var config_data = `
           "2": "Parked (no climb attempt)<br>",
           "2.1": "Parked (Failed Climb)<br>",
           "6": "Shallow Climb<br>",
-          "12": "Deep Climb"
+          "12": "Deep Climb<br>"
         },
         "defaultValue": "0",
         "required": "true"
@@ -186,7 +186,7 @@ var config_data = `
           "": "Not Observed<br>",
           "0": "Ineffective<br>",
           "2": "Average<br>",
-          "4": "Excellent"
+          "4": "Excellent<br>"
         },
         "defaultValue": "",
         "required": "true"
@@ -199,7 +199,7 @@ var config_data = `
           "": "Did Not Defend<br>",
           "0": "Ineffective<br>",
           "2": "Average<br>",
-          "4": "Excellent"
+          "4": "Excellent<br>"
         },
         "defaultValue": "",
         "required": "true"
@@ -211,7 +211,7 @@ var config_data = `
         "choices": {
           "": "None<br>",
           "0.5": "Partially<br>",
-          "1": "Entire Match"
+          "1": "Entire Match<br>"
         },
         "defaultValue": "",
         "required": "true"
@@ -241,4 +241,5 @@ var config_data = `
     ]
   }`;
   
+
 
