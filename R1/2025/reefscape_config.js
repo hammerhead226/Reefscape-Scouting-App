@@ -217,13 +217,6 @@ var config_data = `
         "required": "true"
       },
       {
-        "name": "Defense by opponent was played on this robot",
-        "code": "dpor",
-        "type": "bool",
-        "defaultValue": "0",
-        "required": "true"
-      },
-      {
         "name": "Tippy",
         "code": "tip",
         "type": "bool",
